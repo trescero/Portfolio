@@ -2,8 +2,9 @@
    header / component
    ========================================================================== */
 
+   $header-height: 120px;
+
 .header {
-    --header-height: 120px;
 
     align-items: center;
     display: flex;
@@ -11,7 +12,7 @@
     padding: 0 var(--spacing-sm);
     position: sticky;
     top: 0;
-    height: var(--header-height);
+    height: $header-height;
     z-index: 10;
     transition: transform 0.4s $ease-out-expo;
 
