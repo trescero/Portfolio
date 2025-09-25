@@ -10,4 +10,6 @@ body {
   font-size: var(--font-size-content);
   color: var(--color-black);
   line-height: 1.6;
+
+  scroll-behavior: smooth;
 }
