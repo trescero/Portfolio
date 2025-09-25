@@ -1,0 +1,44 @@
+/* ==========================================================================
+   HEADINGS / ELEMENT
+   ========================================================================== */
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-primary);
+    line-height: 1.1;
+    font-weight: bold;
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    line-height: 110px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    line-height: auto;
+    letter-spacing: -4%;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    line-height: auto;
+    letter-spacing: 6%;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+em {
+    font-style: italic;
+}
+
+p {
+    margin: 0;
+}

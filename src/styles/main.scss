@@ -1,0 +1,37 @@
+//FONTS
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://api.fontshare.com/css?f[]=switzer@100,200,300,400,500,600,700,800,900&display=swap');
+
+// TOOLS
+// mixins et fonctions utilisés globalement dans le SCSS (Sass)
+@import 'tools/cover';
+@import 'tools/typo';
+
+// SETTINGS
+// Contient les variables sur les polices, les définitions de couleurs, les définitions de  grandeurs,   etc.
+@import 'settings/colors';
+@import 'settings/easing';
+@import 'settings/fonts';
+@import 'settings/dimensions';
+
+// GENERIC
+// Permet de réinitialiser les CSS et de changer le modèle de boîte en box-sizing: border-box
+@import 'generic/normalize';
+@import 'generic/reset';
+
+// ELEMENTS
+// Modification des styles généraux de la page. Ce sont les styles qui seront généralement hérités par les éléments de la page.
+@import 'elements/body';
+@import 'elements/headings';
+@import 'elements/links';
+@import 'elements/wrapper';
+
+// COMPONENTS
+// Composants d'interface utilisateur spécifiques.
+// C’est là que la majorité de notre travail a lieu.
+@import 'components/icons';
+@import 'components/header';
+
+@import 'components/wip';
+
+@import '../../node_modules/swiper/swiper-bundle';

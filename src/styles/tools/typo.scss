@@ -1,0 +1,48 @@
+/* ==========================================================================
+   cover / typo
+   ========================================================================== */
+
+$html-font-size: 16px;
+@use 'sass:math';
+
+$default-min-bp: 480px;
+$default-max-bp: 1440px;
+
+@function round($number, $decimals: 0) {
+    $n: 1;
+    @if $decimals > 0 {
+        @for $i from 1 through $decimals {
+            $n: $n * 10;
+        }
+    }
+    @return math.div(math.round($number * $n), $n);
+}
+
+@function px-to-rem($px) {
+    $rems: math.div($px, 16px) * 1rem;
+    @return $rems;
+}
+
+@function typo(
+    $min-size,
+    $max-size: null,
+    $min-breakpoint: $default-min-bp,
+    $max-breakpoint: $default-max-bp,
+    $unit: vw
+) {
+    @if ($max-size) {
+        $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+        $slope-to-unit: round($slope * 100, 2);
+        $intercept-rem: round(px-to-rem($min-size - $slope * $min-breakpoint), 2);
+        $min-size-rem: round(px-to-rem($min-size), 2);
+        $max-size-rem: round(px-to-rem($max-size), 2);
+        @return clamp(
+            #{$min-size-rem},
+            #{$slope-to-unit}#{$unit} + #{$intercept-rem},
+            #{$max-size-rem}
+        );
+    } @else {
+        @return round(px-to-rem($min-size), 2);
+    }
+    
+}
