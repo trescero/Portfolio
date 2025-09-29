@@ -1,0 +1,12 @@
+.arrow-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+
+    color: var(--color-white);
+
+    .icon {
+        fill: var(--color-primary);
+    }
+}
