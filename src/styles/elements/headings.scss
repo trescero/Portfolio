@@ -12,10 +12,15 @@ h3 {
 }
 
 h1 {
+    color: var(--color-white);
     font-size: var(--font-size-h1);
     line-height: 110px;
     text-transform: uppercase;
     font-weight: 800;
+
+    .highlighted {
+        color: var(--color-primary);
+    }
 }
 
 h2 {
@@ -40,9 +45,12 @@ em {
 
 p {
     margin: 0;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-a {
+a.link {
     font-family: var(--font-primary);
     font-size: var(--font-size-a) !important;
     line-height: normal;
