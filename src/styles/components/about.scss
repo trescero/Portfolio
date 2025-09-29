@@ -5,6 +5,31 @@
         display: flex;
         flex-direction: column;
         gap: 50px;
+
+        .section-title {
+            color: var(--color-primary);
+        }
+
+        .skills-card{
+            background: rgba($color: #383838, $alpha: 0.5);
+
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 40px 30px;
+            border-radius: 30px;
+        }
+
+        .card-title {
+            color: var(--color-grey);
+        }
+
+        .li-line{
+            display: block;
+            width: 20px;
+            height: 4px;
+            background-color: var(--color-primary);
+        }
     }
 
     .about-hero {
@@ -62,27 +87,12 @@
         flex-direction: column;
         gap: 15px;
 
-        .section-title {
-            color: var(--color-primary);
-        }
-
         .hard-tabs {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
 
             .skills-card {
-                background: rgba($color: #383838, $alpha: 0.5);
-
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-                padding: 40px 30px;
-                border-radius: 30px;
-
-                h3 {
-                    color: var(--color-grey);
-                }
 
                 .skill-card {
                     display: flex;
@@ -126,6 +136,62 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .about-bottom{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+
+        width: 100%;
+        .skill{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    .soft-skills{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 860px;
+
+        .soft-tabs{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+    }
+
+    .other{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 860px;
+
+        .interests{
+            max-height: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .interests-cards{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
+
+            .interests-col{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 30px;
             }
         }
     }
