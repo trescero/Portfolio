@@ -1,12 +1,63 @@
+.hero-link h3{
+    color: var(--color-white);
+
+    transition: color .4s ease-in-out;
+}
+
 .arrow-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: var(--spacing-sm);
+    position: relative;
 
     color: var(--color-white);
 
+    padding: 10px 20px;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    background: none;
+
+    transition: color .4s ease-in-out;
+
     .icon {
         fill: var(--color-primary);
+        transition: fill 0.4s ease;
+    }
+
+    
+     &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: var(--color-primary);
+        z-index: -1;
+        transition: width 0.4s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+
+    }
+
+    &:hover {
+
+        color: var(--color-bg-primary);
+        
+        .icon {
+            fill: var(--color-bg-primary);
+        }
+
+        h3{
+            color: var(--color-bg-primary);
+        }
     }
 }
+
+
