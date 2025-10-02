@@ -18,6 +18,8 @@
             gap: 30px;
             padding: 40px 30px;
             border-radius: 30px;
+
+            border: 1px solid rgba($color: #F4F1E7, $alpha: 0.2)
         }
 
         .card-title {
@@ -91,53 +93,54 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+        }
 
-            .skills-card {
+        .skills-card {
 
-                .skill-card {
-                    display: flex;
-                    gap: 20px;
+            .skill-card {
+                display: flex;
+                gap: 20px;
 
-                    .card-media {
-                        height: 88px;
-                        width: 88px;
+                .card-media {
+                    height: 88px;
+                    width: 88px;
 
-                        border-radius: 20px;
-                        overflow: hidden;
+                    border-radius: 20px;
+                    overflow: hidden;
 
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
                     }
+                }
 
-                    .card-content {
-                        width: auto;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 15px;
-                        flex: 1;
+                .card-content {
+                    width: auto;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    flex: 1;
 
-                        .bar {
-                            width: 100%;
-                            height: 20px;
-                            background: var(--color-dark-grey);
-                            border: solid 1px var(--color-grey);
-                            width: 100%;
+                    .bar {
+                        width: 100%;
+                        height: 20px;
+                        background: var(--color-dark-grey);
+                        border: solid 1px var(--color-grey);
+                        width: 100%;
 
-                            .bar-fill {
-                                display: block;
-                                height: 100%;
-                                width: 0%;
-                                background: var(--color-primary);
-                                transition: all 1s ease-in-out;
-                            }
+                        .bar-fill {
+                            display: block;
+                            height: 100%;
+                            width: 0%;
+                            background: var(--color-primary);
+                            transition: all 1s ease-in-out;
                         }
                     }
                 }
             }
         }
+        
     }
 
     .about-bottom{
@@ -164,6 +167,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
+            height: 100%;
         }
 
     }
@@ -173,6 +177,14 @@
         flex-direction: column;
         gap: 15px;
         max-width: 860px;
+
+        .other-tabs{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
 
         .interests{
             max-height: 300px;
@@ -193,6 +205,17 @@
                 align-items: flex-start;
                 gap: 30px;
             }
+        }
+    }
+
+    .other-link{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .icon{
+            rotate: -90deg;
         }
     }
 }
