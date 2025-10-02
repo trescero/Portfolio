@@ -214,6 +214,10 @@
         justify-content: center;
         align-items: center;
 
+        .arrow-btn{
+            color: var(--color-primary);
+        }
+
         .icon{
             rotate: -90deg;
         }
