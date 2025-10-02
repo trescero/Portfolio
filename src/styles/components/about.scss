@@ -28,8 +28,8 @@
 
         .li-line{
             display: block;
-            width: 20px;
-            height: 4px;
+            width: 15px;
+            height: 2px;
             background-color: var(--color-primary);
         }
     }
@@ -213,13 +213,5 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        .arrow-btn{
-            color: var(--color-primary);
-        }
-
-        .icon{
-            rotate: -90deg;
-        }
     }
 }

@@ -36,6 +36,8 @@ h3 {
     letter-spacing: 1.68px;
     text-transform: uppercase;
     font-weight: 400;
+
+    color: var(--color-primary);
 }
 
 em {
@@ -45,7 +47,7 @@ em {
 p {
     margin: 0;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
 }
 
@@ -53,6 +55,6 @@ a.link {
     font-family: var(--font-primary);
     font-size: var(--font-size-a) !important;
     line-height: normal;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
 }
