@@ -1,15 +1,19 @@
-.section-default{
+.section-default {
     padding: var(--spacing-xl) 0;
 
-    .wrapper{
+    .wrapper {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-md);
     }
 
-    .section-title{
+    .section-title {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-sm);
     }
+}
+
+.section {
+    overflow: hidden;
 }

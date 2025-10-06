@@ -4,8 +4,26 @@ export default class Carousel {
   constructor(element) {
     this.element = element;
     this.options = {
-      slidesPerView: 1,
-      spaceBetween: 20,
+      slidesPerView: 1.5,
+      centeredSlides: false,
+      spaceBetween: 40,
+      slideToClickedSlide: true,
+      grabCursor: true,
+      watchSlidesProgress: true,
+      watchOverflow: true,
+      breakpoints: {},
+      autoplay: false,
+      loop: false,
+      speed: 1200,
+
+      /* effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        slideShadows: false,
+        scale: 0.8,
+        depth: 0,
+      }, */
+
       pagination: {
         el: this.element.querySelector('.swiper-pagination'),
       },
@@ -13,9 +31,9 @@ export default class Carousel {
         nextEl: this.element.querySelector('.swiper-button-next'),
         prevEl: this.element.querySelector('.swiper-button-prev'),
       },
-      breakpoints: {},
-      autoplay: false,
-      loop: false,
+      scrollbar: {
+        el: this.element.querySelector('.swiper-scrollbar'),
+      },
     };
 
     this.init();
@@ -83,7 +101,7 @@ export default class Carousel {
   }
 
   init() {
-    console.log('initialisation de ma composante Carousel');
+    /* console.log('initialisation de ma composante Carousel'); */
 
     this.setOptions();
 
