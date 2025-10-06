@@ -1,7 +1,7 @@
 .hero-link h3 {
     color: var(--color-primary);
 
-    transition: color 0.4s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
 .arrow-right {
@@ -27,13 +27,13 @@
 
     background: none;
 
-    transition: color 0.4s ease-in-out;
+    transition: color 0.3s ease-in-out;
 
     text-transform: uppercase;
 
     .icon {
         fill: var(--color-primary);
-        transition: fill 0.4s ease;
+        transition: fill 0.3s ease;
     }
 
     &::after {
@@ -45,7 +45,7 @@
         height: 100%;
         background: var(--color-primary);
         z-index: -1;
-        transition: width 0.4s ease-in-out;
+        transition: width 0.3s ease-in-out;
     }
 
     &:hover::after {
@@ -61,6 +61,125 @@
 
         h3 {
             color: var(--color-bg-primary);
+        }
+    }
+}
+
+.footer-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+
+    color: var(--color-black);
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    background: none;
+
+    transition: color 0.3s ease-in-out;
+
+    text-transform: uppercase;
+
+    .icon {
+        fill: var(--color-black);
+        transition: fill 0.3s ease;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: var(--color-black);
+        z-index: -1;
+        transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &:hover {
+        color: var(--color-white);
+
+        .icon {
+            fill: var(--color-white);
+        }
+
+        h3 {
+            color: var(--color-white);
+        }
+    }
+}
+
+.link-left {
+    padding: 10px 0px 10px 0px;
+    transition: padding 0.3s ease;
+
+    &:hover {
+        padding: 10px 20px;
+    }
+}
+
+.footer-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+
+    color: var(--color-black);
+
+    padding: 10px 20px;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    background: none;
+
+    transition: color 0.3s ease-in-out;
+
+    text-transform: uppercase;
+
+    border: 3px solid var(--color-black);
+
+    .icon {
+        fill: var(--color-black);
+        transition: fill 0.3s ease;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: var(--color-black);
+        z-index: -1;
+        transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    &:hover {
+        color: var(--color-white);
+
+        .icon {
+            fill: var(--color-white);
+        }
+
+        h3 {
+            color: var(--color-white);
         }
     }
 }
