@@ -65,8 +65,9 @@ export default class Scroller {
       ScrollTrigger.create({
         pin: pinnedItem,
         trigger: pinnedItem.parentElement,
+        scrub: 2,
         start: 'center center',
-        end: '80% center',
+        end: '+=500px',
         markers: true,
       });
     }
