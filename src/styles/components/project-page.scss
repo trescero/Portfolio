@@ -70,3 +70,9 @@
         }
     }
 }
+
+.prototype iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* or whatever your Figma frame ratio is */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
