@@ -11,8 +11,43 @@
 
     color: var(--color-white);
 
+    .card-hover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
+        background: rgba($color: #000000, $alpha: 0.6);
+        text-shadow: 1px 1px 2px var(--color-black);
+
+        transition: all 0.3s ease;
+    }
+
+    /* ::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: none;
+        background: rgba($color: #000000, $alpha: 0.1);
+
+        
+    } */
+
     &:hover {
         color: var(--color-white);
+
+        .card-hover {
+            opacity: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     .card-media {
