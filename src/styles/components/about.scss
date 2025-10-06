@@ -10,8 +10,8 @@
             color: var(--color-primary);
         }
 
-        .skills-card{
-            background: rgba($color: #383838, $alpha: 0.5);
+        .skills-card {
+            background: rgba($color: black, $alpha: 0.1);
 
             display: flex;
             flex-direction: column;
@@ -19,14 +19,14 @@
             padding: 40px 30px;
             border-radius: 30px;
 
-            border: 1px solid rgba($color: #F4F1E7, $alpha: 0.2)
+            border: 1px solid rgba($color: #f4f1e7, $alpha: 0.2);
         }
 
         .card-title {
             color: var(--color-grey);
         }
 
-        .li-line{
+        .li-line {
             display: block;
             width: 15px;
             height: 2px;
@@ -96,7 +96,6 @@
         }
 
         .skills-card {
-
             .skill-card {
                 display: flex;
                 gap: 20px;
@@ -126,7 +125,7 @@
                         width: 100%;
                         height: 20px;
                         background: var(--color-dark-grey);
-                        border: solid 1px var(--color-grey);
+                        /* border: solid 1px var(--color-grey); */
                         width: 100%;
 
                         .bar-fill {
@@ -140,16 +139,15 @@
                 }
             }
         }
-        
     }
 
-    .about-bottom{
+    .about-bottom {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
 
         width: 100%;
-        .skill{
+        .skill {
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -157,28 +155,27 @@
         }
     }
 
-    .soft-skills{
+    .soft-skills {
         display: flex;
         flex-direction: column;
         gap: 15px;
         max-width: 860px;
 
-        .soft-tabs{
+        .soft-tabs {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             height: 100%;
         }
-
     }
 
-    .other{
+    .other {
         display: flex;
         flex-direction: column;
         gap: 15px;
         max-width: 860px;
 
-        .other-tabs{
+        .other-tabs {
             width: 100%;
             height: 100%;
             display: flex;
@@ -186,19 +183,19 @@
             gap: 40px;
         }
 
-        .interests{
+        .interests {
             max-height: 300px;
             display: flex;
             flex-direction: column;
             gap: 15px;
 
-            .interests-cards{
+            .interests-cards {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 50px;
             }
 
-            .interests-col{
+            .interests-col {
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
@@ -208,7 +205,7 @@
         }
     }
 
-    .other-link{
+    .other-link {
         display: flex;
         flex-direction: column;
         justify-content: center;

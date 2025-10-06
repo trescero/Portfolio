@@ -3,11 +3,9 @@
    ========================================================================== */
 
 h1,
-h2,
-h3 {
+h2 {
     font-family: var(--font-primary);
     line-height: 1.1;
-    font-weight: bold;
     margin: 0;
 }
 
@@ -35,9 +33,11 @@ h3 {
     line-height: auto;
     letter-spacing: 1.68px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 300;
+    margin: 0;
+    font-family: var(--font-secondary);
 
-    color: var(--color-primary);
+    color: var(--color-white);
 }
 
 em {

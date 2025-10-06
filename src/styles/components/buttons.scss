@@ -1,7 +1,13 @@
-.hero-link h3{
-    color: var(--color-white);
+.hero-link h3 {
+    color: var(--color-primary);
 
-    transition: color .4s ease-in-out;
+    transition: color 0.4s ease-in-out;
+}
+
+.arrow-right {
+    .icon {
+        rotate: -90deg;
+    }
 }
 
 .arrow-btn {
@@ -11,7 +17,7 @@
     gap: var(--spacing-sm);
     position: relative;
 
-    color: var(--color-white);
+    color: var(--color-primary);
 
     padding: 10px 20px;
 
@@ -21,15 +27,16 @@
 
     background: none;
 
-    transition: color .4s ease-in-out;
+    transition: color 0.4s ease-in-out;
+
+    text-transform: uppercase;
 
     .icon {
         fill: var(--color-primary);
         transition: fill 0.4s ease;
     }
 
-    
-     &::after {
+    &::after {
         content: '';
         position: absolute;
         top: 0;
@@ -43,21 +50,17 @@
 
     &:hover::after {
         width: 100%;
-
     }
 
     &:hover {
-
         color: var(--color-bg-primary);
-        
+
         .icon {
             fill: var(--color-bg-primary);
         }
 
-        h3{
+        h3 {
             color: var(--color-bg-primary);
         }
     }
 }
-
-

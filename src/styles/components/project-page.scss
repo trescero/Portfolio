@@ -1,18 +1,17 @@
-.project-hero{
-    
-    .wrapper{
+.project-hero {
+    .wrapper {
         display: flex;
         flex-direction: column;
 
         gap: 120px;
     }
-    .hero-content{
+    .hero-content {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
 
-    .hero-left{
+    .hero-left {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -20,32 +19,31 @@
         max-width: 870px;
     }
 
-    .hero-right{
+    .hero-right {
         background: rgba($color: #383838, $alpha: 0.5);
 
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 50px;
         padding: 40px 30px;
         border-radius: 30px;
 
-        border: 1px solid rgba($color: #F4F1E7, $alpha: 0.2);
+        border: 1px solid rgba($color: #f4f1e7, $alpha: 0.2);
 
-
-        .right-info{
+        .right-info {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
 
-        .project-info{
+        .project-info {
             display: flex;
             gap: 10px;
             justify-content: flex-start;
             align-items: center;
         }
 
-        .li-line{
+        .li-line {
             display: block;
             width: 15px;
             height: 2px;
@@ -53,13 +51,13 @@
         }
     }
 
-    .hero-media{
+    .hero-media {
         width: 100%;
         max-height: 855px;
         border-radius: 30px;
         overflow: hidden;
 
-        img{
+        img {
             border-radius: 45px;
             display: block;
             object-fit: cover;
