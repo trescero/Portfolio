@@ -1,0 +1,108 @@
+.form__simple {
+    --input-padding: 15px;
+
+    .grid {
+        display: grid;
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: 1fr;
+
+        @media screen and (min-width: $breakpoint-md) {
+            grid-template-columns: repeat(2, 1fr); // first name + last name
+        }
+    }
+
+    .form__footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.form__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .is-sent & {
+        display: none;
+    }
+}
+
+.form__confirmation {
+    display: none;
+
+    .is-sent & {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+
+        h2,
+        h3 {
+            color: var(--color-black);
+        }
+    }
+}
+
+/*
+        input
+    ========================================================================== */
+.input__label {
+    display: block;
+    font-family: var(--font-primary);
+    color: var(--color-black) !important;
+    font-weight: 300;
+
+    margin-bottom: 10px;
+}
+
+.input__element {
+    border: 1px solid var(--color-black);
+    background-color: var(--color-white);
+    cursor: pointer;
+    font-family: inherit;
+    outline: none;
+    padding: var(--input-padding);
+    width: 100%;
+
+    &::placeholder {
+        color: var(--color-grey);
+    }
+
+    &:focus {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/*
+        textarea
+    ========================================================================== */
+.textarea {
+    .input__element {
+        resize: vertical;
+        min-height: 150px;
+    }
+}
+
+/*
+        error
+    ========================================================================== */
+.error_text {
+    margin-top: var(--spacing-xs);
+    color: var(--color-primary-dark);
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.error {
+    .input__element {
+        box-shadow: inset 0 0 0 3px var(--color-error);
+    }
+
+    .input__label {
+        color: var(--color-error);
+    }
+
+    .error_text {
+        display: block;
+    }
+}

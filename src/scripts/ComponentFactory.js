@@ -1,6 +1,7 @@
 import Carousel from './components/Carousel.js';
 import Header from './components/Header.js';
 import Bars from './components/Bars.js';
+import Form from './components/Form.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -9,6 +10,7 @@ export default class ComponentFactory {
       Header,
       Carousel,
       Bars,
+      Form,
     };
     this.init();
   }

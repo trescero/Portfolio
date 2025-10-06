@@ -1,4 +1,87 @@
 {% include '_partials/_header.html' %}
 
 </body>
+
+<div class="bg"></div>
+
+<section class="contact">
+    <div class="wrapper wrapper-content">
+        <div class="section-title">
+            <h1>Contactez-Moi</h1>
+        </div>
+
+        <div class="contact-page">
+            <div class="contact-left">
+                <form action="" class="form__simple" autocomplete="off" data-component="Form">
+                    <div class="form__body">
+
+                        <div class="grid grid-2">
+                            <div class="input">
+                                <label class="input__label" for="surname">Prénom</label>
+                                <input class="input__element" type="text" name="surname" id="surname" placeholder="Votre Prénom" required />
+                                <p class="error_text">Veuillez remplir ce champ.</p>
+                            </div>
+
+                            <div class="input">
+                                <label class="input__label" for="name">Nom</label>
+                                <input class="input__element" type="text" name="name" id="name" placeholder="Votre Nom" required />
+                                <p class="error_text">Veuillez remplir ce champ.</p>
+                            </div>
+                        </div>
+
+                        <div class="input">
+                        <label class="input__label" for="email">Adresse courriel</label>
+                        <input class="input__element" type="email" name="email" id="email" placeholder="ex: bobtremblay@gmail.com" required />
+                        <p class="error_text">Veuillez entrer une adresse courriel valide.</p>
+                        </div>
+
+                        <div class="input">
+                        <label class="input__label" for="message">Message</label>
+                        <textarea class="input__element" name="message" id="message" rows="5" required></textarea>
+                        <p class="error_text">Veuillez remplir ce champ.</p>
+                        </div>
+
+                        <footer class="form_footer">
+                        <button class="button button_rounded">Soumettre</button>
+                        </footer>
+                    </div>
+
+                    <div class="form__confirmation">
+                        <h2>Merci</h2>
+                        <h3>Votre formulaire a bien été envoyé.</h3>
+                    </div>
+                </form>
+            </div>
+
+            <div class="contact-right">
+                <div class="contact">
+                    <h3>Mes coordonées:</h3>
+                    <div class="contact-links">
+                        <a href="mailto:derek.samson@outlook.com" class="link contact-link link-left">
+                            <svg class="icon">
+                                <use href="#icon-mail"></use>
+                            </svg>
+                            derek.samson@outlook.com
+                        </a>
+                        <a href="#" class="link contact-link link-left">
+                            <svg class="icon">
+                                <use href="#icon-download"></use>
+                            </svg>
+                            Curriculum Vitae
+                        </a>
+                    </div>
+                </div>
+
+                <div class="socials">
+                    <h3>Mes réseaux:</h3>
+                    <ul class="contact-socials">
+                        <li><a href="https://www.instagram.com/derek_.samson/" class="link contact-link link-left">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/in/derek-samson/" class="link contact-link link-left">LinkedIn</a></li>
+                        <li><a href="https://github.com/trescero" class="link contact-link link-left">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </html>
