@@ -37,7 +37,14 @@
     .about-hero {
         display: flex;
         align-items: center;
-        min-height: 800px;
+        height: clamp(600px, 80vh, 1000px);
+        width: 100%;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+        }
 
         .hero-content {
             z-index: 2;
@@ -52,7 +59,7 @@
             top: 0;
             right: 0;
 
-            max-height: 800px;
+            height: clamp(600px, 80vh, 1000px);
             width: 60vw;
 
             z-index: 01;
@@ -60,10 +67,18 @@
             display: block;
             overflow: hidden;
 
+            @media screen and (max-width: $breakpoint-sm) {
+                position: static;
+                width: 100%;
+                height: clamp(150px, 40vh, 400px);
+            }
+
             img {
                 width: 100%;
                 height: 100%;
                 display: block;
+
+                object-fit: cover;
             }
         }
     }
@@ -93,6 +108,10 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+
+            @media screen and (max-width: $breakpoint-md) {
+                grid-template-columns: 1fr;
+            }
         }
 
         .skills-card {
@@ -100,12 +119,26 @@
                 display: flex;
                 gap: 20px;
 
+                @media screen and (max-width: $breakpoint-xs) {
+                    .card-media {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+
                 .card-media {
                     height: 88px;
                     width: 88px;
 
                     border-radius: 20px;
                     overflow: hidden;
+
+                    @media screen and (max-width: $breakpoint-xs) {
+                        width: 60px;
+                        height: 60px;
+
+                        border-radius: 14px;
+                    }
 
                     img {
                         width: 100%;
@@ -128,6 +161,10 @@
                         /* border: solid 1px var(--color-grey); */
                         width: 100%;
 
+                        @media screen and (max-width: $breakpoint-xs) {
+                            height: 15px;
+                        }
+
                         .bar-fill {
                             display: block;
                             height: 100%;
@@ -147,6 +184,11 @@
         gap: 40px;
 
         width: 100%;
+
+        @media screen and (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+        }
+
         .skill {
             display: flex;
             justify-content: flex-start;
@@ -159,13 +201,21 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        max-width: 860px;
+
+        @media screen and (max-width: $breakpoint-md) {
+            width: 100%;
+        }
 
         .soft-tabs {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             height: 100%;
+            width: 100%;
+
+            @media screen and (max-width: $breakpoint-sm) {
+                grid-template-columns: 1fr;
+            }
         }
     }
 
@@ -173,7 +223,6 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        max-width: 860px;
 
         .other-tabs {
             width: 100%;
@@ -184,7 +233,7 @@
         }
 
         .interests {
-            max-height: 300px;
+            height: 100%;
             display: flex;
             flex-direction: column;
             gap: 15px;
