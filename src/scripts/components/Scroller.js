@@ -228,6 +228,7 @@ export default class Scroller {
         trigger: sectionHoriz,
         scrub: 1,
         snap: 1 / nbPanels,
+        start: 'center center',
         end: () => '+=' + (sectionHoriz.offsetWidth + buffer),
       },
     });

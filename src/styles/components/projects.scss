@@ -1,9 +1,17 @@
-.projects{
+.projects {
     height: fit-content;
 }
 
 .card-wrapper {
-    width: 100%;
+    width: 80vw;
+    flex-shrink: 0;
+}
+
+.js-horiz {
+    display: flex;
+    flex-wrap: nowrap;
+    width: fit-content;
+    gap: 40px; /* adjust to your preferred spacing */
 }
 
 .card-project {
