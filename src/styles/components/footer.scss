@@ -12,11 +12,20 @@
         align-items: flex-start;
         gap: 70px;
 
+        @media screen and (max-width: $breakpoint-sm) {
+            align-items: center;
+        }
+
         .footer-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             width: 100%;
+
+            @media screen and (max-width: $breakpoint-sm) {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
 
             .grid-element {
                 width: 100%;
@@ -29,12 +38,22 @@
                 align-items: flex-start;
                 gap: 50px;
 
+                @media screen and (max-width: $breakpoint-sm) {
+                    align-items: center;
+                    gap: 20px;
+                }
+
                 .footer-contact {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: flex-start;
                     gap: 30px;
+
+                    @media screen and (max-width: $breakpoint-sm) {
+                        align-items: center;
+                        gap: 10px;
+                    }
 
                     a {
                         display: flex;
@@ -52,7 +71,7 @@
 
             .footer-right {
                 .footer-socials {
-                    list-style: none;
+                    list-style-type: none;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -60,6 +79,12 @@
                     gap: 30px;
 
                     margin: 0;
+
+                    @media screen and (max-width: $breakpoint-sm) {
+                        align-items: center;
+                        padding: 0;
+                        gap: 10px;
+                    }
                 }
             }
         }

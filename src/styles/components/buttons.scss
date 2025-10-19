@@ -138,9 +138,20 @@
     align-items: center;
     gap: 20px;
 
+    flex-wrap: wrap;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        gap: 10px !important;
+    }
+
     .icon {
         width: 48px;
         height: 48px;
+
+        @media screen and (max-width: $breakpoint-xs) {
+            width: 30px !important;
+            height: 30px !important;
+        }
     }
 
     .icon {
