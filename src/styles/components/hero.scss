@@ -11,12 +11,20 @@
 
     margin-bottom: 100px;
 
+    .wrapper {
+        height: 100%;
+        width: 100%;
+    }
+
     .hero-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: var(--spacing-xxl);
+
+        gap: 200px;
+
+        height: 100%;
 
         .hero-title {
             display: flex;
@@ -25,8 +33,10 @@
             align-items: center;
             gap: var(--spacing-md);
 
+            text-align: center;
+
             .hero-h1 {
-                font-size: 150px;
+                font-size: var(--font-size-hero-h1);
                 color: var(--color-white);
             }
 

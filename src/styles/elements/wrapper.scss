@@ -6,6 +6,15 @@
     max-width: 1520px;
     width: calc(100% - var(--spacing-md));
     margin: 0 auto;
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @media screen and (max-width: $breakpoint-xs) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .wrapper-header {
