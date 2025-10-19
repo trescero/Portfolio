@@ -4,7 +4,7 @@
     .wrapper {
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 70px;
 
         .section-title {
             color: var(--color-primary);
@@ -49,11 +49,11 @@
 
         .hero-media {
             position: absolute;
-            top: 100px;
+            top: 0;
             right: 0;
 
             max-height: 800px;
-            max-width: 1200px;
+            width: 60vw;
 
             z-index: 01;
 
@@ -71,7 +71,7 @@
     .info {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 30px;
 
         .info-text {
             display: flex;
@@ -87,7 +87,7 @@
     .hard-skills {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 30px;
 
         .hard-tabs {
             display: grid;
@@ -158,7 +158,7 @@
     .soft-skills {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 30px;
         max-width: 860px;
 
         .soft-tabs {
@@ -172,7 +172,7 @@
     .other {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 30px;
         max-width: 860px;
 
         .other-tabs {
