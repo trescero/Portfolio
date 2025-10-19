@@ -205,7 +205,7 @@ export default class Scroller {
         pin: pinnedItem,
         trigger: pinnedItem.parentElement,
         scrub: 2,
-        start: 'center center',
+        start: 'top top',
         end: '+=500px',
         markers: true,
       });
@@ -234,6 +234,42 @@ export default class Scroller {
     });
   }
 
+  initStack() {
+    const stackSection = this.element.querySelector('.js-stack');
+    const cards = stackSection.querySelectorAll('.js-stack-card');
+    const stackOffset = 40; // How much of each previous card peeks out
+
+    cards.forEach((card, index) => {
+      ScrollTrigger.create({
+        trigger: card,
+        start: 'top top', // Changed from 'center center'
+        pin: true,
+        pinSpacing: false,
+        endTrigger: cards[cards.length - 1],
+        end: 'top top', // Changed from 'center center'
+      });
+
+      // Move cards UP as subsequent cards come in
+      const cardsBelow = cards.length - index - 1;
+      if (cardsBelow > 0) {
+        gsap.fromTo(
+          card,
+          { y: 0 },
+          {
+            y: -stackOffset * cardsBelow,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: cards[index + 1],
+              start: 'top top', // Changed from 'center center'
+              end: `top+=${stackOffset * cardsBelow} top`, // Changed from 'center center'
+              scrub: true,
+            },
+          }
+        );
+      }
+    });
+  }
+
   setOptions() {
     if ('skew' in this.element.dataset) {
       this.options.hasSkew = true;
@@ -247,6 +283,10 @@ export default class Scroller {
 
     if (this.element.querySelector('.js-horiz')) {
       this.initHoriz();
+    }
+
+    if (this.element.querySelector('.js-stack')) {
+      this.initStack();
     }
   }
 }

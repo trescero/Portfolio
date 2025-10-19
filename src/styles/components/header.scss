@@ -2,10 +2,9 @@
    header / component
    ========================================================================== */
 
-   $header-height: 120px;
+$header-height: 100px;
 
 .header {
-
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -218,7 +217,7 @@
     z-index: 10;
 
     span {
-        background: var(--color-black);
+        background: var(--color-white);
         border-radius: 3px;
         height: var(--bar-height);
         width: 100%;
