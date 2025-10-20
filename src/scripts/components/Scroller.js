@@ -207,7 +207,6 @@ export default class Scroller {
         scrub: 2,
         start: 'top top',
         end: '+=500px',
-        markers: true,
       });
     }
   }
@@ -237,19 +236,19 @@ export default class Scroller {
   initStack() {
     const stackSection = this.element.querySelector('.js-stack');
     const cards = stackSection.querySelectorAll('.js-stack-card');
-    const stackOffset = 40; // How much of each previous card peeks out
+    const stackOffset = 40;
 
     cards.forEach((card, index) => {
       ScrollTrigger.create({
         trigger: card,
-        start: 'top top', // Changed from 'center center'
+        start: 'center center',
         pin: true,
         pinSpacing: false,
         endTrigger: cards[cards.length - 1],
-        end: 'top top', // Changed from 'center center'
+        end: 'center center',
+        force3D: true,
       });
 
-      // Move cards UP as subsequent cards come in
       const cardsBelow = cards.length - index - 1;
       if (cardsBelow > 0) {
         gsap.fromTo(
@@ -258,11 +257,14 @@ export default class Scroller {
           {
             y: -stackOffset * cardsBelow,
             ease: 'none',
+            force3D: true,
             scrollTrigger: {
               trigger: cards[index + 1],
-              start: 'top top', // Changed from 'center center'
-              end: `top+=${stackOffset * cardsBelow} top`, // Changed from 'center center'
+              start: 'center center',
+              end: `center+=${stackOffset * cardsBelow} center`,
               scrub: true,
+              onEnter: () => gsap.set(card, { opacity: 0 }),
+              onLeaveBack: () => gsap.set(card, { opacity: 1 }),
             },
           }
         );

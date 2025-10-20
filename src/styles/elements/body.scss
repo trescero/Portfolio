@@ -10,3 +10,8 @@ body {
     font-size: var(--font-size-content);
     color: var(--color-white);
 }
+
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+}
