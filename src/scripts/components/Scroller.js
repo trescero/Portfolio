@@ -48,43 +48,27 @@ export default class Scroller {
     // console.log('ScrollSmoother created:', this.scroller);
   }
 
-  // Handle hash navigation - works for links ANYWHERE on the page (including header)
   initHashNavigation() {
-    // console.log('Initializing hash navigation');
-
-    // Store bound handler so we can debug it
     this.handleLinkClick = (e) => {
-      // Find if click was on or inside a link
       const link = e.target.closest('a');
       if (!link) return;
 
       const href = link.getAttribute('href');
-      // console.log('Link clicked, href:', href);
 
-      // Check if it's a hash link
       if (href && href.includes('#')) {
-        // Split on the LAST # to handle edge cases
         const hashIndex = href.lastIndexOf('#');
         const path = href.substring(0, hashIndex);
         const hash = href.substring(hashIndex + 1);
 
-        if (!hash) return; // No hash part, let it navigate normally
+        if (!hash) return;
 
-        // console.log('Path:', path, 'Hash:', hash);
-
-        // Get current page filename
         const currentPath = window.location.pathname;
         let currentPage = currentPath.split('/').pop();
 
-        // If we're at root or no file specified, assume index.html
         if (!currentPage || currentPage === '' || currentPath.endsWith('/')) {
           currentPage = 'index.html';
         }
 
-        // console.log('Current page:', currentPage);
-
-        // Check if link is for current page
-        // Handle: #projects, index.html#projects, ./index.html#projects, /index.html#projects
         const isCurrentPage =
           !path ||
           path === '' ||
@@ -94,24 +78,19 @@ export default class Scroller {
           path.endsWith('/' + currentPage) ||
           path.endsWith(currentPage);
 
-        // console.log('Is current page?', isCurrentPage);
-
         if (isCurrentPage) {
-          // console.log('✓ Same page hash link - preventing default and scrolling');
           e.preventDefault();
           e.stopPropagation();
-          e.stopImmediatePropagation(); // Stop ALL other handlers
+          e.stopImmediatePropagation();
 
           const targetElement = document.getElementById(hash);
 
           if (targetElement) {
-            // console.log('Target element found, scrolling to:', hash);
-
             if (this.scroller) {
-              // Smooth scroll with GSAP
               this.scroller.scrollTo(targetElement, true, 'top 100px');
 
-              // Update URL
+              document.documentElement.classList.remove('nav-is-active');
+
               window.history.pushState(null, null, `#${hash}`);
             } else {
               console.error('❌ Scroller not initialized!');
@@ -120,24 +99,17 @@ export default class Scroller {
             console.warn('❌ Target element not found:', hash);
           }
 
-          return false; // Extra prevention
+          return false;
         } else {
-          // console.log('Different page - allowing normal navigation');
         }
       }
     };
 
-    // Listen to ALL clicks on the entire document with CAPTURE phase
-    // This ensures we catch the event before any other handlers
     document.addEventListener('click', this.handleLinkClick, true);
 
-    // console.log('✓ Click listener attached to document');
-
-    // Handle browser back/forward buttons
     window.addEventListener('popstate', () => {
       if (window.location.hash) {
         const hash = window.location.hash.slice(1);
-        // console.log('Popstate - navigating to:', hash);
 
         const targetElement = document.getElementById(hash);
         if (targetElement && this.scroller) {
@@ -147,21 +119,16 @@ export default class Scroller {
     });
   }
 
-  // Handle hash present on initial page load
   handleInitialHash() {
     if (window.location.hash) {
       const hash = window.location.hash.slice(1);
-      // console.log('Initial hash detected:', hash);
 
       const targetElement = document.getElementById(hash);
 
       if (targetElement && this.scroller) {
-        // Wait for page to fully load and render
         setTimeout(() => {
-          // console.log('Scrolling to initial hash:', hash);
           this.scroller.scrollTo(targetElement, false, 'top 100px');
 
-          // Refresh ScrollTrigger to recalculate positions
           ScrollTrigger.refresh();
         }, 500);
       }

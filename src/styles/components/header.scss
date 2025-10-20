@@ -74,7 +74,7 @@ $header-height: 100px;
     display: flex;
     align-items: center;
     overflow-y: auto;
-    transform: translateX(-100%) scale(0.95);
+    transform: translateX(-100%);
     transition: transform 0.6s $ease-out-expo;
 
     .nav-is-active & {
@@ -202,9 +202,9 @@ $header-height: 100px;
 }
 
 .header__toggle {
-    --bar-height: 8px;
+    --bar-height: 5px;
     --bar-width: 50px;
-    --bar-spacer: 6px;
+    --bar-spacer: 8px;
 
     background-color: transparent;
     border: none;

@@ -1,14 +1,39 @@
 .project-hero {
+    padding-bottom: 200px;
+
+    @media screen and (max-width: $breakpoint-md) {
+        padding-bottom: 150px;
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+        padding-bottom: 100px;
+    }
+
     .wrapper {
         display: flex;
         flex-direction: column;
 
         gap: 120px;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            gap: 50px;
+        }
     }
     .hero-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 200px;
+
+        @media screen and (max-width: $breakpoint-lg) {
+            gap: 100px;
+        }
+
+        @media screen and (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            gap: 50px;
+        }
     }
 
     .hero-left {
@@ -62,11 +87,15 @@
         overflow: hidden;
 
         img {
-            border-radius: 45px;
+            border-radius: 30px;
             display: block;
             object-fit: cover;
             width: 100%;
             height: 100%;
+
+            @media screen and (max-width: $breakpoint-xs) {
+                border-radius: 15px;
+            }
         }
     }
 }

@@ -69,6 +69,13 @@ export default class Header {
   initNavMobile() {
     const toggle = this.element.querySelector('.js-toggle');
     toggle.addEventListener('click', this.onToggleNav.bind(this));
+
+    // Fix: Don't call the function, pass a reference
+    const navLinks = this.element.querySelectorAll('.id-link');
+    navLinks.forEach((link) => {
+      console.log(link);
+      link.addEventListener('click', this.onToggleNav.bind(this)); // Add this. and .bind(this)
+    });
   }
 
   onToggleNav() {
