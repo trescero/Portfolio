@@ -14,6 +14,7 @@ $header-height: 100px;
     height: $header-height;
     z-index: 10;
     transition: transform 0.4s $ease-out-expo;
+    transition: z-index 1s $ease-out-expo;
 
     &::before {
         background: none;
@@ -41,6 +42,10 @@ $header-height: 100px;
         justify-content: space-between;
         align-items: center;
     }
+
+    .nav-is-active & {
+        z-index: 14;
+    }
 }
 
 .logo {
@@ -54,12 +59,16 @@ $header-height: 100px;
     color: var(--color-white);
 
     text-decoration: none;
-    transition: all 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 
     z-index: 3;
 
     &:hover {
         color: var(--color-primary);
+    }
+
+    .nav-is-active & {
+        z-index: 15;
     }
 }
 
@@ -79,6 +88,7 @@ $header-height: 100px;
 
     .nav-is-active & {
         transform: translateX(0) scale(1);
+        z-index: 14;
     }
 
     ul {
@@ -242,6 +252,7 @@ $header-height: 100px;
     }
 
     .nav-is-active & {
+        z-index: 15;
         span {
             top: calc(50% - var(--bar-height) / 2);
             &:nth-child(1) {

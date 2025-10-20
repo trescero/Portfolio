@@ -1,6 +1,16 @@
 .contact {
     background: var(--color-white);
-    height: calc(100vh - $header-height);
+    min-height: calc(100vh - $header-height);
+
+    padding-top: 50px;
+
+    z-index: 11;
+
+    position: relative;
+
+    @media screen and (max-width: $breakpoint-lg) {
+        padding-bottom: 50px;
+    }
 
     h1 {
         color: var(--color-black);
@@ -21,6 +31,11 @@
     column-gap: 20px;
 
     width: 100%;
+
+    @media screen and (max-width: $breakpoint-lg) {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 }
 
 .contact-left {
@@ -31,16 +46,28 @@
     display: flex;
     flex-direction: column;
 
+    @media screen and (max-width: $breakpoint-lg) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
     h3 {
         color: var(--color-black);
     }
 
-    .contact,
+    .coords,
     .socials {
         height: fit-content;
     }
 
-    .contact {
+    .contact-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -49,30 +76,16 @@
 
         padding: 40px 0 0 50px;
 
-        .contact-links {
+        @media screen and (max-width: $breakpoint-lg) {
+            padding: 0;
+        }
+
+        .contact-links,
+        .contact-socials {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 10px;
-        }
-    }
-
-    .socials {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 30px;
-
-        padding: 40px 0 40px 50px;
-
-        .contact-socials {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            list-style-type: none;
             gap: 10px;
 
             margin: 0;
