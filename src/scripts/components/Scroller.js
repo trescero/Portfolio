@@ -5,9 +5,6 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js';
 
 export default class Scroller {
   constructor(element) {
-    // console.log('🚀 Scroller constructor called');
-    // console.log('Element:', element);
-
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
     this.options = {
@@ -21,20 +18,14 @@ export default class Scroller {
     this.setOptions();
     this.init();
 
-    // Try initializing IMMEDIATELY first
-    // console.log('⏰ Calling initHashNavigation immediately');
     this.initHashNavigation();
 
-    // console.log('⏰ Setting timeout for handleInitialHash');
-    // Handle initial hash after a delay
     setTimeout(() => {
-      // console.log('⏰ Timeout fired, calling handleInitialHash');
       this.handleInitialHash();
     }, 500);
   }
 
   init() {
-    // console.log('Scroller.init() start');
     this.scroller = ScrollSmoother.create({
       smooth: 2,
       effects: true,
@@ -44,8 +35,6 @@ export default class Scroller {
       onStop: this.onStopScroll.bind(this),
       ease: 'expo.out',
     });
-
-    // console.log('ScrollSmoother created:', this.scroller);
   }
 
   initHashNavigation() {
@@ -200,12 +189,65 @@ export default class Scroller {
     });
   }
 
+  //CARD STACK
   initStack() {
     const stackSection = this.element.querySelector('.js-stack');
     const cards = stackSection.querySelectorAll('.js-stack-card');
     const stackOffset = 40;
+    const pagination = document.createElement('div');
+    pagination.className = 'stack-pagination';
+    document.body.appendChild(pagination);
+
+    ScrollTrigger.create({
+      trigger: stackSection,
+      start: 'top 20%',
+      end: 'bottom 80%',
+      onEnter: () => (pagination.style.opacity = '1'),
+      onLeave: () => (pagination.style.opacity = '0'),
+      onEnterBack: () => (pagination.style.opacity = '1'),
+      onLeaveBack: () => (pagination.style.opacity = '0'),
+    });
 
     cards.forEach((card, index) => {
+      const dot = document.createElement('div');
+      dot.className = 'pagination-dot';
+      if (index === 0) dot.classList.add('active');
+      pagination.appendChild(dot);
+
+      dot.addEventListener('click', () => {
+        const smoother = ScrollSmoother.get();
+        if (smoother) {
+          smoother.scrollTo(card, true, 'center center');
+        } else {
+          gsap.to(window, {
+            scrollTo: {
+              y: card,
+              offsetY: -window.innerHeight / 2 + card.offsetHeight / 2,
+            },
+            duration: 1,
+            ease: 'power2.inOut',
+          });
+        }
+      });
+
+      ScrollTrigger.create({
+        trigger: card,
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => {
+          document
+            .querySelectorAll('.pagination-dot')
+            .forEach((d) => d.classList.remove('active'));
+          dot.classList.add('active');
+        },
+        onEnterBack: () => {
+          document
+            .querySelectorAll('.pagination-dot')
+            .forEach((d) => d.classList.remove('active'));
+          dot.classList.add('active');
+        },
+      });
+
       ScrollTrigger.create({
         trigger: card,
         start: 'center center',

@@ -224,3 +224,40 @@
         }
     }
 }
+
+.stack-pagination {
+    position: fixed;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    @media screen and (max-width: $breakpoint-md) {
+        right: 20px;
+    }
+
+    .pagination-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--color-grey);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+
+        &:hover {
+            background: var(--color-white);
+        }
+
+        &.active {
+            background: var(--color-primary);
+            transform: scale(1.3);
+        }
+    }
+}
