@@ -16,11 +16,6 @@ export default class Carousel {
       autoplay: false,
       loop: false,
       speed: 1200,
-      mousewheel: {
-        forceToAxis: true,
-        sensitivity: 1,
-        releaseOnEdges: true,
-      },
 
       /* effect: 'coverflow',
       coverflowEffect: {
