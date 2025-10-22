@@ -38,75 +38,68 @@ export default class Scroller {
   }
 
   initHashNavigation() {
-    this.handleLinkClick = (e) => {
-      const link = e.target.closest('a');
-      if (!link) return;
+  this.handleLinkClick = (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
 
-      const href = link.getAttribute('href');
+    const href = link.getAttribute('href');
 
-      if (href && href.includes('#')) {
-        const hashIndex = href.lastIndexOf('#');
-        const path = href.substring(0, hashIndex);
-        const hash = href.substring(hashIndex + 1);
+    if (href && href.includes('#')) {
+      const hashIndex = href.lastIndexOf('#');
+      const path = href.substring(0, hashIndex);
+      const hash = href.substring(hashIndex + 1);
 
-        if (!hash) return;
+      if (!hash) return;
 
-        const currentPath = window.location.pathname;
-        let currentPage = currentPath.split('/').pop();
+      const currentPath = window.location.pathname;
+      const currentPage = currentPath.split('/').pop() || 'index.html';
+      
+      const linkPage = path.split('/').pop() || 'index.html';
 
-        if (!currentPage || currentPage === '' || currentPath.endsWith('/')) {
-          currentPage = 'index.html';
-        }
+      const isCurrentPage = 
+        !path || 
+        path === '' || 
+        linkPage === currentPage ||
+        linkPage === 'index.html' && currentPage === 'index.html';
 
-        const isCurrentPage =
-          !path ||
-          path === '' ||
-          path === 'index.html' ||
-          path === './index.html' ||
-          path === '/index.html' ||
-          path.endsWith('/' + currentPage) ||
-          path.endsWith(currentPage);
-
-        if (isCurrentPage) {
-          e.preventDefault();
-          e.stopPropagation();
-          e.stopImmediatePropagation();
-
-          const targetElement = document.getElementById(hash);
-
-          if (targetElement) {
-            if (this.scroller) {
-              this.scroller.scrollTo(targetElement, true, 'top 100px');
-
-              document.documentElement.classList.remove('nav-is-active');
-
-              window.history.pushState(null, null, `#${hash}`);
-            } else {
-              console.error('❌ Scroller not initialized!');
-            }
-          } else {
-            console.warn('❌ Target element not found:', hash);
-          }
-
-          return false;
-        } else {
-        }
-      }
-    };
-
-    document.addEventListener('click', this.handleLinkClick, true);
-
-    window.addEventListener('popstate', () => {
-      if (window.location.hash) {
-        const hash = window.location.hash.slice(1);
+      if (isCurrentPage) {
+        e.preventDefault();
+        e.stopPropagation();
 
         const targetElement = document.getElementById(hash);
-        if (targetElement && this.scroller) {
-          this.scroller.scrollTo(targetElement, true, 'top 100px');
+
+        if (targetElement) {
+          if (this.scroller) {
+            this.scroller.scrollTo(targetElement, true, 'top 100px');
+            
+            document.documentElement.classList.remove('nav-is-active');
+            
+            window.history.pushState(null, null, `#${hash}`);
+          } else {
+            console.error('❌ Scroller not initialized!');
+          }
+        } else {
+          console.warn('❌ Target element not found:', hash);
         }
+
+        return false;
       }
-    });
-  }
+    }
+  };
+
+  document.addEventListener('click', this.handleLinkClick);
+
+  window.addEventListener('popstate', () => {
+    if (window.location.hash) {
+      const hash = window.location.hash.slice(1);
+      const targetElement = document.getElementById(hash);
+      
+      if (targetElement && this.scroller) {
+        this.scroller.scrollTo(targetElement, true, 'top 100px');
+      }
+    }
+  });
+}
 
   handleInitialHash() {
     if (window.location.hash) {
