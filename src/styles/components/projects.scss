@@ -100,6 +100,10 @@
         width: 100%;
         display: block;
 
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+
         &::before {
             content: '';
             position: absolute;
@@ -107,7 +111,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba($color: #000000, $alpha: 0.3);
+            background: rgba($color: #000000, $alpha: 0.4);
         }
 
         img {
@@ -115,10 +119,6 @@
             width: 100%;
             display: block;
             object-fit: cover;
-
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
         }
     }
 
@@ -160,7 +160,7 @@
             }
 
             .subtitle {
-                color: var(--color-grey);
+                color: var(--color-white);
             }
         }
 

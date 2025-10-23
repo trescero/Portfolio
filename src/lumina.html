@@ -1,0 +1,149 @@
+{% include '_partials/_header.html' %}
+
+<div class="bg"></div>
+
+<div id="smooth-wrapper">
+    <div id="smooth-content" data-component="Scroller" data-pin-items="true">
+        <section class="hero project-hero">
+            <div class="wrapper wrapper-content">
+                <div class="hero-content">
+                    <div class="hero-left">
+                        <h1 data-lag=".08">Lumina</h1>
+
+                        <p data-lag=".15">
+                            Lumina est un projet personnel de design que j’ai créé afin d’explorer et d’expérimenter différents styles visuels. L’objectif était
+                            de sortir de ma zone de confort et de tester diverses approches esthétiques, que ce soit au niveau des couleurs, de la typographie
+                            ou de la mise en page. Ce projet m’a permis d’affiner mon sens du design tout en développant une meilleure compréhension de la
+                            cohérence visuelle et de l’identité graphique.
+                        </p>
+                    </div>
+
+                    <div class="hero-right" data-lag=".2">
+                        <div class="type right-info">
+                            <h3>Type de projet</h3>
+                            <div class="project-info">
+                                <span class="li-line"></span>
+                                <p>Projet personnel</p>
+                            </div>
+                            <div class="project-info">
+                                <span class="li-line"></span>
+                                <p>Design</p>
+                            </div>
+                        </div>
+
+                        <div class="type right-info">
+                            <h3>Languages / Logiciels</h3>
+                            <div class="project-info">
+                                <span class="li-line"></span>
+                                <p>Figma</p>
+                            </div>
+                        </div>
+
+                        <div class="type right-info">
+                            <h3>Crédits</h3>
+                            <div class="project-info">
+                                <p>Réalisation complète: Derek Samson</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-media" data-lag=".2">
+                    <img src="./assets/images/lumina-mockup.jpg" alt="Mockup BSC" />
+                </div>
+            </div>
+        </section>
+
+        <section class="section-default project-section">
+            <div class="wrapper wrapper-content">
+                <div class="section-title">
+                    <h2 data-lag=".08">identité visuelle</h2>
+                </div>
+
+                <div class="swiper swiper-project" data-component="Carousel" data-split1 data-lag=".05">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./assets/images/lumina-identity-1.jpg" alt="" />
+                            <p class="description">Palette de couleurs</p>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./assets/images/lumina-identity-2.jpg" alt="" />
+                            <p class="description">Design système</p>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-default project-section">
+            <div class="wrapper wrapper-content">
+                <div class="section-title">
+                    <h2 data-lag=".08">Conceptualisation et Idéation</h2>
+                    <p data-lag=".03">
+                        Pour la phase de conceptualisation et d’idéation, je me suis inspiré de plusieurs sites web aux styles variés afin d’explorer
+                        différentes approches visuelles.
+                    </p>
+                </div>
+
+                <div class="swiper swiper-project" data-component="Carousel" data-split1 data-lag=".05">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./assets/images/lumina-concept-1.jpg" alt="" />
+                            <p class="description">Inspirations</p>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./assets/images/lumina-concept-2.jpg" alt="" />
+                            <p class="description">Moodboard</p>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-default project-section">
+            <div class="wrapper wrapper-content">
+                <div class="section-title">
+                    <h2 data-lag=".08">Design & prototypage</h2>
+                    <p data-lag=".03">
+                        Pour l’étape de design et prototype, j’ai concrétisé mes idées en créant des maquettes visuelles et un prototype interactif afin de
+                        donner vie au concept.
+                    </p>
+                </div>
+
+                <div class="swiper swiper-project" data-component="Carousel" data-split1 data-lag=".05">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./assets/images/lumina-design-1.jpg" alt="" />
+                            <p class="description">Design de l'accueil</p>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="./assets/images/lumina-design-2.jpg" alt="" />
+                            <p class="description">Wireframe de la section commentaires</p>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-default prototype">
+            <div class="wrapper-content">
+                <div class="section-title">
+                    <h2>Prototype Figma</h2>
+                </div>
+                <iframe
+                    style="border: 1px solid rgba(0, 0, 0, 0.1)"
+                    src="https://embed.figma.com/design/dB8cJTvtWh9FjZfwMCxTHw/Lumina?node-id=10-125&embed-host=share"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </section>
+
+        {% include '_partials/_footer.html' %}
+    </div>
+</div>
