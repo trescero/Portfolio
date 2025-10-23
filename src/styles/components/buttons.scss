@@ -188,11 +188,10 @@
     }
 }
 
-.contact-link-social{
-
+.contact-link-social {
     @media screen and (max-width: $breakpoint-sm) {
-            font-size: 0 !important;
-        }
+        font-size: 0 !important;
+    }
 
     /* .icon{
         @media screen and (max-width: $breakpoint-sm) {
@@ -267,4 +266,9 @@
             color: var(--color-white);
         }
     }
+}
+
+.text-link {
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
 }

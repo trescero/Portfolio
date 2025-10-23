@@ -106,6 +106,21 @@
     }
 }
 
+.project-info-credits {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+
+    p {
+    }
+
+    a {
+        white-space: nowrap;
+    }
+}
+
 .prototype iframe {
     width: 100%;
     aspect-ratio: 16 / 9; /* or whatever your Figma frame ratio is */
