@@ -13,8 +13,7 @@ $header-height: 100px;
     top: 0;
     height: $header-height;
     z-index: 10;
-    transition: transform 0.4s $ease-out-expo;
-    transition: z-index 1s $ease-out-expo;
+    transition: transform 0.4s $ease-out-expo, z-index 1s $ease-out-expo;
 
     &::before {
         background: none;

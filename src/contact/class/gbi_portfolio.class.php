@@ -53,13 +53,13 @@ function var_dump_ret($mixed = null) {
         
         Derek Samson<br><br>
 
-        <strong> Voici les détails de  votre message.</strong></p>";
+        <strong> Voici les détails de  votre message.</strong></p><br>";
 
         $html .= "<h3>Identification de l'usager</h3>";
 
         $html .= "<span class=\"descriptions\" >Nom:</span> <span class=\"informations\">{$this->tim_form_nom}</span><br>";
 
-        $html .= "<span class=\"descriptions\" >Courriel:</span> <span class=\"informations\">{$this->tim_form_courriel}</span></p>";
+        $html .= "<span class=\"descriptions\" >Courriel:</span> <span class=\"informations\">{$this->tim_form_courriel}</span></p><br>";
         
         $html .= "<h3>Message:</h3>";
         $html .= "<p><span class=\"descriptions\" >Message:</span> <span class=\"informations\">{$this->tim_form_commentaires}</span><br>";
