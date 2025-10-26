@@ -4,20 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Derek Samson | Portfolio</title>
-    <link rel="stylesheet" href="styles/main.css" />
-    <script src="scripts/main.js" defer></script>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <script src="/scripts/main.js" defer></script>
   </head>
   <body>
     <header class="header" data-component="Header" data-threshold="0.1">
       <div class="wrapper wrapper-header">
-        <a href="index.html" class="logo">
+        <a href="/#" class="logo">
           DS
         </a>
         <nav class="nav_primary" id="nav">
           <ul>
-            <li><a href="index.html#projects" class="link id-link" title="">Projets</a></li>
-            <li><a href="index.html#about" class="link id-link" title="">À propos</a></li>
-            <li><a href="contact.html" class="link">Contact</a></li>
+            <li><a href="/#projects" class="link id-link" title="">Projets</a></li>
+            <li><a href="/#about" class="link id-link" title="">À propos</a></li>
+            <li><a href="#" class="link">Contact</a></li>
           </ul>
         </nav>  
         <button class="header__toggle js-toggle">
