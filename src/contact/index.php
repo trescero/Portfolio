@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Derek Samson | Portfolio</title>
+    <meta name="description" content="Derek Samson - Portfolio">
     <link rel="stylesheet" href="/styles/main.css" />
     <script src="/scripts/main.js" defer></script>
   </head>
