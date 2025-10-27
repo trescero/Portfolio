@@ -38,37 +38,41 @@ export default class Scroller {
   }
 
   initHashNavigation() {
-  this.handleLinkClick = (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
+    this.handleLinkClick = (e) => {
+      const link = e.target.closest('a');
+      if (!link) return;
 
-    const href = link.getAttribute('href');
+      const href = link.getAttribute('href');
 
-    if (href && href.includes('#')) {
-      const hashIndex = href.lastIndexOf('#');
-      const path = href.substring(0, hashIndex);
-      const hash = href.substring(hashIndex + 1);
+      if (href && href.includes('#')) {
+        const hashIndex = href.lastIndexOf('#');
+        const path = href.substring(0, hashIndex);
+        const hash = href.substring(hashIndex + 1);
 
-      if (!hash) return;
+        if (!hash) return;
 
-      const currentPath = window.location.pathname;
-      const currentPage = currentPath.split('/').pop() || 'index.html';
-      
-      const linkPage = path.split('/').pop() || 'index.html';
-
-      const isCurrentPage = 
-        !path || 
-        path === '' || 
-        linkPage === currentPage ||
-        linkPage === 'index.html' && currentPage === 'index.html';
-
-      if (isCurrentPage) {
-        e.preventDefault();
-        e.stopPropagation();
+        const currentPath = window.location.pathname;
+        const currentPage = currentPath.split('/').pop() || 'index.html';
+        
+        // Handle both /index.html and / paths
+        const linkPage = path.split('/').filter(p => p).pop() || 'index.html';
+        
+        // Check if link points to current page
+        const isCurrentPage = 
+          !path ||                                    // Empty path (just #hash)
+          path === '' ||                              // Empty string
+          path === '/' ||                             // Root path
+          linkPage === currentPage ||                 // Same filename
+          (linkPage === 'index.html' && (currentPage === 'index.html' || currentPath === '/')) ||  // Index variations
+          (path === '/' && (currentPage === 'index.html' || currentPath === '/'));  // Root = index
 
         const targetElement = document.getElementById(hash);
 
-        if (targetElement) {
+        if (isCurrentPage && targetElement) {
+          // Only prevent default if we're on the same page AND the element exists
+          e.preventDefault();
+          e.stopPropagation();
+
           if (this.scroller) {
             this.scroller.scrollTo(targetElement, true, 'top 100px');
             
@@ -78,28 +82,29 @@ export default class Scroller {
           } else {
             console.error('❌ Scroller not initialized!');
           }
-        } else {
-          console.warn('❌ Target element not found:', hash);
+
+          return false;
+        } else if (isCurrentPage && !targetElement) {
+          // Element doesn't exist on current page - allow normal navigation
+          console.log('🔄 Target not found on current page, allowing navigation to:', href);
+          // Don't prevent default - let browser navigate normally
         }
-
-        return false;
       }
-    }
-  };
+    };
 
-  document.addEventListener('click', this.handleLinkClick);
+    document.addEventListener('click', this.handleLinkClick);
 
-  window.addEventListener('popstate', () => {
-    if (window.location.hash) {
-      const hash = window.location.hash.slice(1);
-      const targetElement = document.getElementById(hash);
-      
-      if (targetElement && this.scroller) {
-        this.scroller.scrollTo(targetElement, true, 'top 100px');
+    window.addEventListener('popstate', () => {
+      if (window.location.hash) {
+        const hash = window.location.hash.slice(1);
+        const targetElement = document.getElementById(hash);
+        
+        if (targetElement && this.scroller) {
+          this.scroller.scrollTo(targetElement, true, 'top 100px');
+        }
       }
-    }
-  });
-}
+    });
+  }
 
   handleInitialHash() {
     if (window.location.hash) {
