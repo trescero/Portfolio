@@ -105,7 +105,7 @@ if(isset($_GET["action"]) && (!empty($_GET["action"]))) {
                                 </svg>
                                 derek.samson@outlook.com
                             </a>
-                            <a href="#" class="link contact-link link-left">
+                            <a href="/Curriculum Vitae.pdf" target="_blank" class="link contact-link link-left">
                                 <svg class="icon">
                                     <use href="#icon-download"></use>
                                 </svg>
